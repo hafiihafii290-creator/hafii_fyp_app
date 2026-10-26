@@ -1,0 +1,54 @@
+void main(){
+    runApp(MyApp());
+}
+class MyApp extends statlesswidget{
+    const MyApp({super.key});
+    @override
+    Widget build(build context context){
+        return MaterialApp(
+            home:scaffold(
+                appbar:Appbar(
+                    title:text("testing"),
+                    color: const Color.fromARGB(255, 0, 0, 0), 
+                    
+                    
+                ),
+                body:column(
+                    children:[
+                        Container(
+                            color: const Color.fromARGB(255, 0, 0, 0),
+                            height: 100,
+                            width: 100,
+                        )
+                        Container(
+                            color: const Color.fromARGB(255, 0, 0, 0),
+                            height: 100,
+                            width: 100,
+                        )
+                        Container(
+                            color: const Color.fromARGB(255, 0, 0, 0),
+                            height: 100,
+                            width: 100,
+                            
+                        )
+                        Container(
+                            color: const Color.fromARGB(255, 0, 0, 0),
+                            height: 100,
+                            width: 100,
+                            
+                        )Container(
+                            color: const Color.fromARGB(255, 0, 0, 0),
+                            height: 100,
+                            width: 100,
+                            
+                        )
+                        
+
+                    ]
+                )
+
+                
+            )
+        )
+    }
+}
