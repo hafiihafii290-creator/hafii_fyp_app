@@ -1,99 +1,40 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+
+import 'package:hafii_fyp_app/register_screen.dart';
+import 'package:hafii_fyp_app/login.dart';
 
 void main() {
   runApp(const MyApp());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+class MyApp extends StatefulWidget {
+  const MyApp({super.key});
+
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  bool showPassword = true;
+  final passwordcontroller = TextEditingController();
+
+  final name = TextEditingController();
+  final email = TextEditingController();
+  final password = TextEditingController();
+  final confirmPassword = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          backgroundColor: Colors.pink,
-          title: const Text("hafii project"),
+          title: const Text('whtsapp'),
+          backgroundColor: Colors.green,
         ),
-        body:Column(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children:[
-            Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children:[  
-            Container(
-          color:Colors.yellow,
-          width:100,
-          height:100,
-          margin: EdgeInsets.all(10),
-          ),
-            Container(
-          color:Colors.purple,
-          width:100,
-          height:100,
-          margin: EdgeInsets.all(10),
-
-          ),
-            Container(
-          color:Colors.red,
-          width:100,height:200,
-          margin: EdgeInsets.all(10)
-          ),
-
-]
-         ),
-         Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children:[  
-            Container(
-          color:Colors.yellow,
-          width:100,
-          height:100,
-          margin: EdgeInsets.all(10),
-          ),
-            Container(
-          color:Colors.purple,
-          width:100,
-          height:100,
-          margin: EdgeInsets.all(10),
-
-          ),
-            Container(
-          color:Colors.red,
-          width:100,height:200,
-          margin: EdgeInsets.all(10)
-          ),
-
-]
-         ),
-         Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children:[  
-            Container(
-          color:Colors.yellow,
-          width:100,
-          height:100,
-          margin: EdgeInsets.all(10),
-          ),
-            Container(
-          color:Colors.purple,
-          width:100,
-          height:100,
-          margin: EdgeInsets.all(10),
-
-          ),
-            Container(
-          color:Colors.red,
-          width:100,height:100,
-          margin: EdgeInsets.all(10)
-          ),
-
-]
-         )
-          ]
-        )
-        ),
-      );
-    
+        body: RegisterScreen(name: name, email: email, password: password, confirmPassword: confirmPassword),
+      ),
+    );
   }
 }
+
